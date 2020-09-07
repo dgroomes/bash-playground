@@ -4,7 +4,7 @@
 # To exercise the 'find' command we need a playground directory that contains other files and directories with some
 # amount of nested content and a variety of naming. Instead of creating dummy directories and files we will just use the
 # root directory of this 'shell-playground' repository.
-ROOT_DIR=..
+ROOT_DIR=$(cd .. && pwd)
 
 # List top level directories.
 function topLevelDirectories() {
