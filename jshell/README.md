@@ -1,14 +1,17 @@
 # jshell
 
-NOT YET FULLY IMPLEMENTED
-
 Learning and exploring `jshell`--the Java shell that ships with OpenJDK.
 
 ---
 
-Can I run a Java application and then attach a jshell session and just poke around the various objects in my Java
-process and execute arbitrary Java code? This seems like a good way to learn language features of Java or explore 
-methods of a library (e.g. [Jackson](https://github.com/FasterXML/jackson)) or framework (e.g. [Spring](https://github.com/spring-projects/spring-framework)). 
+Java is infamously awkward to get up and running with for beginner programmers. `public static void main(String[] args)`... really?
+And the `main` method must be wrapped in a class. And the compile and run steps must be in separate commands (until [JEP-330](https://openjdk.java.net/jeps/330) anyway).
+Overall, a prototypical "hello world" is just too hard compared to other languages.
+ 
+jshell to the rescue!
+
+This project showcases a simple setup for using jshell with a few libraries (including [Jackson](https://github.com/FasterXML/jackson))
+and with a small set of application source code files. jshell is awesome!  
 
 ### Learn about jshell
 
@@ -32,6 +35,3 @@ Some highlights from the page include:
 1. Compile the program with `./build.sh`
 1. Run the program with `./run-main.sh` (but this isn't what we really want, we want to use jshell! See the next step)
 1. Start a jshell session which loads the library and application source code with `./run-jshell.sh`
-  * *This does not work*. Unfortunately I can't figure out the right optionsto jshell to load the application source
-    code. The `--class-path` option is problematic. It does not work the same way I am used to using the `-cp` option in
-    the `java` command.
