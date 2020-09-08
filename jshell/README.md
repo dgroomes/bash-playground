@@ -11,7 +11,7 @@ Overall, a prototypical "hello world" is just too hard compared to other languag
 jshell to the rescue!
 
 This project showcases a simple setup for using jshell with a few libraries (including [Jackson](https://github.com/FasterXML/jackson))
-and with a small set of application source code files. jshell is awesome!  
+and with a small set of application source code files. jshell is awesome!
 
 ### Learn about jshell
 
@@ -19,7 +19,7 @@ The JDK Enhancement Proposal that introduced `jshell` is the best place to learn
 
 To learn the "how", see <https://docs.oracle.com/en/java/javase/14/jshell/introduction-jshell.html#GUID-630F27C8-1195-4989-9F6B-2C51D46F52C8>.
 
-Some highlights from the page include:
+Some highlights from the JEP page include:
 
 > Provide an interactive tool to evaluate declarations, statements, and expressions of the Java programming language, together with an API so that other applications can leverage this functionality.
 
@@ -31,7 +31,12 @@ Some highlights from the page include:
 
 ### Instructions
 
+NOTE: this was developed on macOS.
+
 1. Use Java 14
 1. Compile the program with `./build.sh`
 1. Run the program with `./run-main.sh` (but this isn't what we really want, we want to use jshell! See the next step)
 1. Start a jshell session which loads the library and application source code with `./run-jshell.sh`
+1. The jshell session will be pre-loaded with some convenience imports so you can get busy experimenting with `ObjectMapper`
+   and the custom classes `PointPojo` and `PointRecord`. For example, see a screenshot of an interactive session below:
+![jshell example interactive session](example-session.png)   

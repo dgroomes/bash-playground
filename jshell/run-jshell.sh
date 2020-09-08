@@ -4,5 +4,6 @@
 
 jshell \
   --feedback verbose \
+  --startup DEFAULT --startup setup-snippets.jsh \
   --class-path 'out:lib/*' \
   --enable-preview
