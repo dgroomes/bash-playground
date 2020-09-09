@@ -31,3 +31,8 @@ function fzfChangeDirectory() {
     echo >&2 "No directory was selected"
   fi
 }
+
+# Select an environment variable by exact match using fzf
+function fzfEnv() {
+  env | fzf --exact
+}
