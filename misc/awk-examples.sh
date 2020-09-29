@@ -64,3 +64,15 @@ replaceWithArg() {
   echo "hello there, %PLACEHOLDER%" | awk 'BEGIN{ subject=ARGV[2]; ARGV[2]=""; } { gsub(/%PLACEHOLDER%/,subject) }1' - friend
 }
 #replaceWithArg
+
+leftPad() {
+  echo $"1 22 333 4444" | awk '
+  {
+    $1=sprintf("%04d", $1);
+    $2=sprintf("%04d", $2);
+    $3=sprintf("%04d", $3);
+    $4=sprintf("%04d", $4);
+    print
+  }'
+}
+leftPad
