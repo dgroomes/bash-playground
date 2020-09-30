@@ -1,0 +1,9 @@
+root = true
+
+# "here documents" in Bash have a feature that supports stripping leading tab characters. To use this feature of Bash,
+# we have to tell our editor to actually preserve our tabs at authoring time instead of auto-transforming them into
+# spaces. While I generally like using spaces instead of tabs, I want to purposefully allow tabs in shell scripts.
+# Read about the "<<-" operator that has this "tab-stripping" feature in the excellent book "The Linux Command Line, 2nd
+# Edition" https://learning.oreilly.com/library/view/the-linux-command/9781492071235/xhtml/ch25.xhtml#page_336
+[*.sh]
+indent_style = tab
