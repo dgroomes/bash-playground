@@ -34,3 +34,17 @@ hereDocStripTabs() {
 	EOF
 }
 #hereDocStripTabs
+
+# Here docs can be used in a pipeline.
+# This is contrived example, but it takes a give here doc and applies it to a pipeline of two commands: 1) awk 2) wc
+# If more steps in the pipeline are needed, then simply add them to the right of the last command (wc) and if more here
+# docs are needed simply add them below the last command (wc). In this manner, we can extend the statement downward and
+# to the right which is a natural way to model a pipeline.
+# Referenced material: https://stackoverflow.com/questions/7046381/multiline-syntax-for-piping-a-heredoc-is-this-portable
+hereDocPipeline() {
+	awk '{ $2=sprintf("%02d", $2); }1' <<- EOF |
+	1	2	3
+	EOF
+	wc -c
+}
+hereDocPipeline
