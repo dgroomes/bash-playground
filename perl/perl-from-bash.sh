@@ -9,16 +9,17 @@ replace() {
 # Generate a large sample of JSON-formatted data for testing purposes.
 # This is much faster than using a bash for loop.
 generateTestData() {
+
+	export NUMBER_OF_LINES=3
 	perl -f <(cat <<'EOF'
 	  $json_template = '{ "x": %d, "y": %d }';
-	  $lines = 3;
+	  $number_of_lines = $ENV{NUMBER_OF_LINES};
 
-		for ($i = 1; $i <= $lines; $i++) {
+		for ($i = 1; $i <= $number_of_lines; $i++) {
 		  $x = $i;
-      $y = $lines - $i;
+      $y = $number_of_lines - $i;
 
-      printf $json_template, $i, $y;
-      printf "\n"
+      printf $json_template . "\n", $x, $y;
     }
 EOF
 )
