@@ -47,4 +47,17 @@ hereDocPipeline() {
 	EOF
 	wc -c
 }
-hereDocPipeline
+#hereDocPipeline
+
+# A heredoc that doesn't expand any variables because of the single quotes around the leading EOF. Not sure how this
+# works. Not sure what feature of Bash is being used here.
+hereDocNoExpansion() {
+	local myvar="I am never used even though I appear to be dereferenced in the heredoc!"
+	cat <<-'EOD'
+		hello $myvar
+		hello '$myvar'
+		hello "$myvar"
+		hello "${myvar}"
+EOD
+}
+hereDocNoExpansion
