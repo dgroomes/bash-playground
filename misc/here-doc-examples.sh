@@ -31,9 +31,10 @@ EOF
 hereDocStripTabs() {
   cat <<- EOF
 		hello there. I will *not* be indented!
+			I will also not be indented!
 	EOF
 }
-#hereDocStripTabs
+hereDocStripTabs
 
 # Here docs can be used in a pipeline.
 # This is contrived example, but it takes a give here doc and applies it to a pipeline of two commands: 1) awk 2) wc
@@ -60,4 +61,4 @@ hereDocNoExpansion() {
 		hello "${myvar}"
 EOD
 }
-hereDocNoExpansion
+#hereDocNoExpansion
