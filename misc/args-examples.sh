@@ -8,7 +8,7 @@
 overrideViaEnvironmentVariable() {
 	local message
 	if [[ "x$MESSAGE" == "x" ]]; then
-		message="hello"
+		message="hello there!"
 	else
 		message="$MESSAGE"
 	fi
@@ -21,7 +21,7 @@ overrideViaEnvironmentVariable() {
 #
 # Reference https://stackoverflow.com/questions/4437573/bash-assign-default-value
 overrideViaEnvironmentVariableConcise() {
-	: ${MESSAGE:=hello message  with   spacing    ! Why	does	this		not		need		to		be		quoted?}
+	: ${MESSAGE:=hello there!}
 	echo "message: $MESSAGE"
 }
 overrideViaEnvironmentVariableConcise
