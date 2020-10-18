@@ -1,0 +1,2 @@
+This file exists to exercise scripts to see how they handle file names with spaces. See for example, the
+'loopOverOutput' in the `loop-examples.sh` file.
