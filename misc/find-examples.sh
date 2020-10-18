@@ -7,12 +7,12 @@
 ROOT_DIR=$(cd .. && pwd)
 
 # List top level directories.
-function topLevelDirectories() {
+topLevelDirectories() {
   find "$ROOT_DIR" -type d -depth 1
 }
 
 # List second level directories.
-function secondLevelDirectories() {
+secondLevelDirectories() {
   find "$ROOT_DIR" -type d -depth 2
 }
 
@@ -22,7 +22,7 @@ function secondLevelDirectories() {
 # Importantly, this incantation of 'find' will filter out hidden files in the top-level and in sub-directories. It's
 # necessary to write the '-path' expression to accommodate that requirement. See https://askubuntu.com/a/318211
 # and for an even more portable (but less self-describing) method see https://askubuntu.com/a/749708
-function nonHiddenFiles() {
+nonHiddenFiles() {
   find "$ROOT_DIR" -not -path '*/\.*'
 }
 

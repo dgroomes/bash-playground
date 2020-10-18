@@ -9,17 +9,17 @@ echo "ROOT_DIR set to $ROOT_DIR"
 
 # The bare fzf command will open the fzf selector and populate the list (asynchronously!) with all files in the current
 # directory and all files contained recursively among those files. (I think it excludes hidden files).
-function bareFzf() {
+bareFzf() {
   fzf
 }
 
 # Use fzf to select from the list of non-hidden directories up to a depth of three
-function fzfFromFind() {
+fzfFromFind() {
   find "$ROOT_DIR" -not -path '*/\.*' -type d -maxdepth 3 | fzf
 }
 
 # Use fzf and find to select a directory from a list of directories and then change to that directory
-function fzfChangeDirectory() {
+fzfChangeDirectory() {
   local DEST
   local EXIT_STATUS
   DEST=$(find "$ROOT_DIR" -type d | fzf)
@@ -33,6 +33,6 @@ function fzfChangeDirectory() {
 }
 
 # Select an environment variable by exact match using fzf
-function fzfEnv() {
+fzfEnv() {
   env | fzf --exact
 }
