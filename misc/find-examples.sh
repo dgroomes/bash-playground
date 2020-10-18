@@ -25,4 +25,15 @@ secondLevelDirectories() {
 nonHiddenFiles() {
   find "$ROOT_DIR" -not -path '*/\.*'
 }
+#nonHiddenFiles
 
+# Find directories that contain a file matching some pattern
+#
+# In particular, this function will find Markdown files with the '*.md' suffix that are recursively contained under the
+# root directory and then print the directories that contain the Markdown files.
+#
+# Referenced: https://stackoverflow.com/a/20596195
+findDirectoriesContainingFile() {
+	find "$ROOT_DIR" -name '*.md' -print0 | xargs -0 -n1 dirname | sort --unique
+}
+findDirectoriesContainingFile
