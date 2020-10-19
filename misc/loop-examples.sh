@@ -54,4 +54,23 @@ loopOverOutput() {
 		idx=$((idx + 1))
 	done
 }
-loopOverOutput
+#loopOverOutput
+
+# Loop over output from another command using Bash arrays.
+#
+# Similar to loopOverOutput but saving the output into a Bash array instead of piping it to a while loop. It's
+# necessary to set IFS so that files with spaces in the name are accommodated.
+#
+# Referenced: https://stackoverflow.com/a/9449633
+loopOverOutputWithArray() {
+	IFS=$'\n'
+	local files=( $(ls) )
+	unset IFS
+
+	local idx=1
+	for file in "${files[@]}"; do
+		echo "File $idx: $file"
+		idx=$((idx + 1))
+	done
+}
+loopOverOutputWithArray
