@@ -28,18 +28,28 @@ forI() {
 }
 #forI
 
-# THIS DOES NOT WORK!! Loop over output from another command.
+# Loop over output from another command.
 #
-# In this example, we'll find all the files in the current directory using the "ls" command.
-# Then, we'll take the output of the "ls" command and loop over it using Bash array syntax. Thankfully, this function
-# will handle file names with spaces in the name! The output of the function will be something like... TODO
+# In this example, we'll find all the files in the current directory using the "ls" command. Then, we'll take the output
+# of the "ls" command and pipe it to a "while" loop, looping over it and echoing each line that was output from the "ls"
+# command.
 #
-# Notice how 'file with spaces in the name.txt' is still intact when it is printed. It is not split on its spaces! See
-# the 'arrays-examples.sh' file for more info on Bash arrays.
+# File 1: README.md
+# File 2: args-examples.sh
+# File 3: arrays-examples.sh
+# File 4: awk-examples.sh
+# File 5: file with spaces in the name.txt
+# File 6: find-examples.sh
+# File 7: here-doc-examples.sh
+# File 8: loop-examples.sh
+# File 9: sed-examples.sh
+#
+# Notice how 'file with spaces in the name.txt' is still intact when it is printed. It is not split on its spaces!
+#
+# Referenced: https://stackoverflow.com/questions/35927760/how-can-i-loop-over-the-output-of-a-shell-command
 loopOverOutput() {
-	files=$(ls)
 	local idx=1
-	for file in "${files[@]}"; do
+	ls | while read -r file; do
 		echo "File $idx: $file"
 		idx=$((idx + 1))
 	done
