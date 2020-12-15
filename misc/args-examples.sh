@@ -24,4 +24,10 @@ overrideViaEnvironmentVariableConcise() {
 	: ${MESSAGE:=hello there!}
 	echo "message: $MESSAGE"
 }
-overrideViaEnvironmentVariableConcise
+#overrideViaEnvironmentVariableConcise
+
+# Supply arguments from the contents of a file
+fromFile() {
+	echo $(cat args-examples.sh) | wc
+}
+fromFile
