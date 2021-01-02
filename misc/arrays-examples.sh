@@ -31,4 +31,25 @@ loop2() {
     echo "$i"
   done
 }
-loop2
+#loop2
+
+# Create an array and append to it.
+#
+# Reference: https://unix.stackexchange.com/a/395103
+appendToArray() {
+	arr=(hippo "sea turtle")
+
+	echo "Array *before* appending:"
+	for i in "${arr[@]}"; do
+    echo "$i"
+  done
+
+  echo ""
+
+  arr+=(giraffe "mountain lion")
+	echo "Array *after* appending:"
+	for i in "${arr[@]}"; do
+    echo "$i"
+  done
+}
+appendToArray
