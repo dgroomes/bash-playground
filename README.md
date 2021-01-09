@@ -1,6 +1,26 @@
 # bash-playground
 
-📚 Learning and exploring Bash and capturing useful snippets that I would otherwise too easily forget.
+📚 Learning and exploring Bash and the shell in general; capturing useful snippets that I would otherwise too easily forget.
+
+## Description
+
+### `misc/`
+
+Miscellaneous scripts and scratch content.
+
+See the README in `misc/`.
+
+### `fzf/`
+
+Learning and exploring `fzf` <https://github.com/junegunn/fzf> -- a command-line fuzzy finder.
+
+See the README in `fzf/`.
+
+### `perl/`
+
+Learning and exploring Perl <https://www.perl.org/>.
+
+See the README in `perl/`.
 
 ## WishList
 

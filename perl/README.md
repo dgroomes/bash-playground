@@ -1,6 +1,6 @@
 # Perl
 
-Learning and exploring Perl.
+Learning and exploring Perl <https://www.perl.org/>.
 
 ### Notes
 
