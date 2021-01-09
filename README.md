@@ -8,19 +8,19 @@
 
 Miscellaneous scripts and scratch content.
 
-See the README in `misc/`.
+See the README in [misc/](misc/).
 
 ### `fzf/`
 
 Learning and exploring `fzf` <https://github.com/junegunn/fzf> -- a command-line fuzzy finder.
 
-See the README in `fzf/`.
+See the README in [fzf/](fzf/).
 
 ### `perl/`
 
 Learning and exploring Perl <https://www.perl.org/>.
 
-See the README in `perl/`.
+See the README in [perl/]/(perl/).
 
 ## WishList
 
