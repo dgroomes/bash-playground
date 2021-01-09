@@ -20,7 +20,7 @@ See the README in [fzf/](fzf/).
 
 Learning and exploring Perl <https://www.perl.org/>.
 
-See the README in [perl/]/(perl/).
+See the README in [perl/](perl/).
 
 ## WishList
 
