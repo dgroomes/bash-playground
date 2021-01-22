@@ -27,3 +27,4 @@ See the README in [perl/](perl/).
 General clean-ups, TODOs and things I wish to implement for this project:
 
 * Add `xargs` examples
+* Make an example with a fifo
