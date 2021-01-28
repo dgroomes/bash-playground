@@ -73,4 +73,14 @@ loopOverOutputWithArray() {
 		idx=$((idx + 1))
 	done
 }
-loopOverOutputWithArray
+#loopOverOutputWithArray
+
+# Loop over the content of a file, line-by-line.
+loopOverFileContent() {
+	local idx=1
+	while read -r line; do
+		echo "Line $idx: $line"
+		idx=$((idx + 1))
+	done < "README.md"
+}
+loopOverFileContent
