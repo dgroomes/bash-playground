@@ -37,3 +37,13 @@ tomorrow is another day."
   echo "here is a message: %MESSAGE%" | sed "s/%MESSAGE%/$msg/"
 }
 #replaceWithMultilineString
+
+# Replace a string with the full contents of a file.
+# This will unfortunately add the file content on a new line after the line that was matched.
+replaceWithFileContents() {
+	cat README.md | sed '/content/{
+	  s/content//g
+	  r sed-examples.sh
+	}'
+}
+replaceWithFileContents
