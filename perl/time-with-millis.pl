@@ -7,8 +7,6 @@ use POSIX qw(strftime);
 # Get the current time as a floating point scalar. Seconds from the epoch and fractional seconds. E.g. 1622307523.18013
 my $now = time;
 
-print $now, "\n";
-
 # Expand the time scalar into an array of time components (hour, minute, second, etc)
 my @timecomponents = localtime $now;
 
