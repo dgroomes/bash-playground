@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Examples that print to the terminal in fancy way
+# Examples that print to the terminal in a fancy way
 
 # Taken from https://stackoverflow.com/a/238094
 function progressBarEcho() {
@@ -27,4 +27,37 @@ function spinnerPrintf() {
       sleep .05
   done
 }
-spinnerPrintf
+#spinnerPrintf
+
+# Do some fancy printing by moving the cursor around.
+# We use ANSI escape sequences to control the cursor.
+#
+# See https://en.wikipedia.org/wiki/ANSI_escape_code
+#
+# Warning: this doesn't work very well but it does move the cursor around. This stuff is confusing.
+function cursorControl() {
+
+  # Print 'Cake'
+	echo -ne '[3;1H'
+	echo -ne 'C'
+	echo -ne 'a'
+	echo -ne 'k'
+	echo -ne 'e'
+	sleep .5
+
+  # Replace the first character ('C') with 'L' to spell 'Lake'
+	echo -ne '[3;1H'
+	echo -ne 'L'
+	sleep .5
+
+  # Replace the first character ('L') with 'B' to spell 'Bake'
+	echo -ne '[3;1H'
+	echo -ne 'B'
+	sleep .5
+
+  # Replace the first character ('B') with 'T' to spell 'Take'
+	echo -ne '[3;1H'
+	echo -e 'T'
+	sleep .5
+}
+cursorControl
