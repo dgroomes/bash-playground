@@ -37,5 +37,5 @@ General clean-ups, TODOs and things I wish to implement for this project:
 * [ ] Add `xargs` examples
 * [ ] Make an example with a fifo (a.k.a "named pipe")
 * [x] DONE [Programmable completion](https://www.gnu.org/software/bash/manual/html_node/Programmable-Completion.html). Learn the very basics.
-* [ ] [`bash-completion`](https://github.com/scop/bash-completion) examples. Learn the very basics and explore a real example like `docker`. I'm especially interested
+* [x] DONE [`bash-completion`](https://github.com/scop/bash-completion) examples. Learn the very basics and explore a real example like `docker`. I'm especially interested
   in how to invoke completions in a non-interactive way, like you would need for automated testing.

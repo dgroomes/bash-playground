@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Can we test a programmable completion function in a non-interactive way?
+# Testing programmable completion functions in a non-interactive way.
 
 # A completion function. This defines completion logic for a fictional command called 'describe_color'. The 'describe_color'
 # is not actually implemented in this script because we're only testing the completion function.
