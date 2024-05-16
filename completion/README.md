@@ -29,5 +29,6 @@ of the 'bash-completion' library.
 
 General clean-ups, TODOs and things I wish to implement for this project:
 
-* [ ] Figure out how to autoload a completion script.
+* [x] DONE Figure out how to autoload a completion script.
 * [ ] Consider file renames for consistency
+* [ ] Completions when no arguments. Am I not simulating the comp env vars correctly?
