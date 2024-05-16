@@ -102,16 +102,16 @@ test_completion() {
     actual_completions=$(IFS=$' '; echo "${COMPREPLY[*]}")
 
     if [[ "$actual_completions" == "$expected_completions" ]]; then
-        echo "PASS: '$line'"
+        echo "PASS: '$line' completed to '$actual_completions'"
     else
-        echo "FAIL: '$line'"
+        echo "FAIL: '$line' did not complete as expected"
         echo "Expected: $expected_completions"
         echo "Actual:   $actual_completions"
     fi
 }
 
+# Not sure why this is not working
+#test_completion "describe-color " "red blue green"
 test_completion "describe-color g" "green"
 test_completion "describe-color gr" "green"
 
-# Not sure why this is not working
-#test_completion "describe-color " "red blue green"

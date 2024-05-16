@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Testing programmable completion functions in a non-interactive way.
+# Calling programmable completion functions programmatically (i.e. non-interactively).
 
 # A completion function. This defines completion logic for a fictional command called 'describe_color'. The 'describe_color'
 # is not actually implemented in this script because we're only testing the completion function.
@@ -30,9 +30,9 @@ test_completion() {
     actual_completions=$(IFS=$' '; echo "${COMPREPLY[*]}")
 
     if [[ "$actual_completions" == "$expected_completions" ]]; then
-        echo "PASS: completion '$cur'"
+        echo "PASS: '$cur' completed to '$actual_completions'"
     else
-        echo "FAIL: completion '$cur'"
+        echo "FAIL: '$cur' did not complete as expected"
         echo "Expected: $expected_completions"
         echo "Actual:   $actual_completions"
     fi

@@ -10,16 +10,18 @@ understand the topic by exploring interactive completion, non-interactive comple
 of the 'bash-completion' library. 
 
 1. Start with the essentials
-   * Read the source for `programmable-completion-example.bash`. Exercise the functions in that script and experiment
-     for yourself.
-2. Graduate to non-interactive completion
    * ```shell
-     ./programmable-completion-testing.bash
+     . programmable-completion-example.bash
+     ```
+   * Study the source code, exercise the completions, and experiment for yourself.
+2. Graduate to *non-interactive* (i.e. headless, i.e. programmatic) completion
+   * ```shell
+     ./programmable-completion-example-non-interactive.bash
      ```
    * This script is interesting because it simulates a completion environment. This is useful for automated testing.
 3. Graduate to 'bash-completion'
    * ```shell
-     ./bash-completion-programmatic-example.sh
+     ./bash-completion-example-non-interactive.sh
      ```
    * This was pretty difficult. However, the 'bash-completion' source code is well documented and with the help of an
      LLM you have a chance to actually tease apart Bash code.
@@ -30,5 +32,5 @@ of the 'bash-completion' library.
 General clean-ups, TODOs and things I wish to implement for this project:
 
 * [x] DONE Figure out how to autoload a completion script.
-* [ ] Consider file renames for consistency
+* [x] DONE Consider file renames for consistency
 * [ ] Completions when no arguments. Am I not simulating the comp env vars correctly?
