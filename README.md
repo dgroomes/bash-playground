@@ -30,6 +30,13 @@ Learning and exploring Perl <https://www.perl.org/>.
 See the README in [perl/](perl/).
 
 
+### `completion/`
+
+Learning and exploring Bash programmable completion.
+
+See the README in [completion/](completion/).
+
+
 ## Wish List
 
 General clean-ups, TODOs and things I wish to implement for this project:
