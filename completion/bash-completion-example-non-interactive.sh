@@ -88,11 +88,17 @@ test_completion() {
     local actual_completions
 
     COMP_LINE="$line"
-    IFS="$COMP_WORDBREAKS" read -a COMP_WORDS <<< "$COMP_LINE"
+    _comp_split COMP_WORDS "$COMP_LINE" || return 1
+
+    # In the frequent case that there are no words after the command (e.g. "describe-colors "), we have to simulate that
+    # there is actually one word and it's the empty string.
+    if [[ "${#COMP_WORDS[@]}" -eq 1 ]]; then
+				COMP_WORDS+=("")
+		fi
     COMP_POINT=${#COMP_LINE}
 
-    # I think this is the number of words after the command. For example, if the completion is triggered when the line
-    # is 'describe-color gre', then this value is 2.
+    # This is the number of words after the command. For example, if the completion is triggered when the line
+    # is 'describe-color gre', then this value is just 1.
     COMP_CWORD=$(( ${#COMP_WORDS[@]} - 1 ))
 
     # Call the completion function
@@ -110,8 +116,7 @@ test_completion() {
     fi
 }
 
-# Not sure why this is not working
-#test_completion "describe-color " "red blue green"
+test_completion "describe-color " "red blue green"
 test_completion "describe-color g" "green"
 test_completion "describe-color gr" "green"
 

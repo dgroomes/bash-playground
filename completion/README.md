@@ -33,4 +33,4 @@ General clean-ups, TODOs and things I wish to implement for this project:
 
 * [x] DONE Figure out how to autoload a completion script.
 * [x] DONE Consider file renames for consistency
-* [ ] Completions when no arguments. Am I not simulating the comp env vars correctly?
+* [x] DONE Completions when no arguments. Am I not simulating the comp env vars correctly?
