@@ -21,7 +21,7 @@ of the 'bash-completion' library.
    * This script is interesting because it simulates a completion environment. This is useful for automated testing.
 3. Graduate to 'bash-completion'
    * ```shell
-     ./bash-completion-example-non-interactive.sh
+     env -i /opt/homebrew/bin/bash --noprofile bash-completion-example-non-interactive.bash
      ```
    * This was pretty difficult. However, the 'bash-completion' source code is well documented and with the help of an
      LLM you have a chance to actually tease apart Bash code.
