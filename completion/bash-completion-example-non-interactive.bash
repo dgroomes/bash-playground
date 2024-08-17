@@ -12,9 +12,9 @@
 #
 #     env -i /opt/homebrew/bin/bash --noprofile bash-completion-example-non-interactive.bash
 #
-# By using "env -i", we isolate the new Bash subprocess from any other incidental setup that may have happened in the
-# parent process (i.e. another Bash process). By using "--noprofile", we avoid any setup that happens in the
-# ".bash_profile".
+# By using "env -i", we isolate the new Bash subprocess from any other incidental environmental knowledge that was set
+# in the parent process. For example, the subprocess will have no PATH, no HOME, and not much of anything. By using
+# "--noprofile", we also avoid any setup that happens in the ".bash_profile".
 #
 # The GNU Bash manual's section on "Programmable Completion" is recommended reading: https://www.gnu.org/software/bash/manual/html_node/Programmable-Completion.html
 
@@ -23,7 +23,7 @@ if [[ ! -d "/opt/homebrew/opt/bash-completion@2" ]]; then
     exit 1
 fi
 
-# This makes it so that 'bash-completion' will find 'completions/_describe-color' in its "lookup path" when it is
+# This makes it so that 'bash-completion' will find 'completions/_describe-color' in its "search order" when it is
 # trying to load the completion script for 'describe-color'.
 export BASH_COMPLETION_USER_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
