@@ -18,14 +18,8 @@
 #
 # The GNU Bash manual's section on "Programmable Completion" is recommended reading: https://www.gnu.org/software/bash/manual/html_node/Programmable-Completion.html
 
-if [[ ! -d "/opt/homebrew/Cellar/bash-completion@2" ]]; then
+if [[ ! -d "/opt/homebrew/opt/bash-completion@2" ]]; then
     echo >&2 "No bash-completion@2 installation found."
-    exit 1
-fi
-
-versioned_installations=(/opt/homebrew/Cellar/bash-completion@2/*)
-if [ ${#versioned_installations[@]} -gt 1 ]; then
-    echo >&2 "Multiple bash-completion@2 versions found in Homebrew directory. Please remove all but one. Completions will not be loaded."
     exit 1
 fi
 
@@ -33,8 +27,8 @@ fi
 # trying to load the completion script for 'describe-color'.
 export BASH_COMPLETION_USER_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
-. "${versioned_installations[0]}/share/bash-completion/bash_completion"
-. "${versioned_installations[0]}/etc/bash_completion.d/000_bash_completion_compat.bash"
+. /opt/homebrew/opt/bash-completion@2/share/bash-completion/bash_completion
+. /opt/homebrew/opt/bash-completion@2/etc/bash_completion.d/000_bash_completion_compat.bash
 
 # Trigger 'bash-completion' to find and load the completion script for a command (e.g. 'describe-color' or '7z'). We
 # happen to know that the completion function for 'describe-color' is defined in 'completions/_describe-color' and we
